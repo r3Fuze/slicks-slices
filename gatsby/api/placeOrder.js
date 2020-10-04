@@ -41,6 +41,7 @@ function wait(ms = 0) {
 }
 
 exports.handler = async (event, context) => {
+  console.log(event)
   const body = JSON.parse(event.body)
 
   if (body.maple) {
