@@ -40,8 +40,11 @@ function wait(ms = 0) {
   })
 }
 
-exports.handler = async (event, context) => {
-  console.log(event)
+exports.handler = async (event) => {
+  if (event.isBase64Encoded) {
+    event.body = Buffer.from(event.body, "base64").toString()
+  }
+
   const body = JSON.parse(event.body)
 
   if (body.maple) {
