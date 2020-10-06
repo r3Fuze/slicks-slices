@@ -12,7 +12,7 @@ export default function PizzasPage({ data, pageContext }) {
       <SEO
         title={
           pageContext.topping
-            ? `Pizzas With ${pageContext.topping}`
+            ? `Pizzas with ${pageContext.topping}`
             : "All Pizzas"
         }
       />

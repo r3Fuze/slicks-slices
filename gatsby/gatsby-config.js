@@ -5,7 +5,7 @@ dotenv.config({ path: ".env" })
 export default {
   siteMetadata: {
     title: "Slick's Slices",
-    siteUrl: "https://gatsby.pizza",
+    siteUrl: "https://fuz.space",
     description: "The best pizza place in Hamilton!",
     twitter: "@slicksslices",
   },
