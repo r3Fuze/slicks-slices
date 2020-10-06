@@ -17,7 +17,7 @@ export default {
       options: {
         projectId: "b2vhxjgj",
         dataset: "production",
-        watchMode: true,
+        watchMode: process.env.NODE_ENV === "development",
         token: process.env.SANITY_TOKEN,
       },
     },
