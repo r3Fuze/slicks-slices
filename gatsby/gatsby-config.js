@@ -21,5 +21,11 @@ export default {
         token: process.env.SANITY_TOKEN,
       },
     },
+    {
+      resolve: "gatsby-plugin-google-gtag",
+      options: {
+        trackingIds: ["G-WDPSEF84EW"],
+      },
+    },
   ],
 }
