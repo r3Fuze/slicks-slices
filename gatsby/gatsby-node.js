@@ -50,32 +50,6 @@ async function turnToppingsIntoPages({ graphql, actions }) {
   })
 }
 
-async function fetchBeersIntoNodes({
-  actions,
-  createNodeId,
-  createContentDigest,
-}) {
-  const res = await fetch("https://sampleapis.com/beers/api/ale")
-  const beers = await res.json()
-
-  for (const beer of beers) {
-    const nodeMeta = {
-      id: createNodeId(`beer-${beer.name}`),
-      parent: null,
-      children: [],
-      internal: {
-        type: "Beer",
-        mediaType: "application/json",
-        contentDigest: createContentDigest(beer),
-      },
-    }
-    actions.createNode({
-      ...beer,
-      ...nodeMeta,
-    })
-  }
-}
-
 async function turnSlicemastersIntoPages({ graphql, actions }) {
   const { data } = await graphql(`
     query {
@@ -117,10 +91,6 @@ async function turnSlicemastersIntoPages({ graphql, actions }) {
       },
     })
   }
-}
-
-export async function sourceNodes(params) {
-  await Promise.all([fetchBeersIntoNodes(params)])
 }
 
 export async function createPages(params) {
