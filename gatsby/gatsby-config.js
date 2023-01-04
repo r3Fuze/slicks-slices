@@ -20,12 +20,6 @@ export default {
         watchMode: process.env.NODE_ENV === "development",
         token: process.env.SANITY_TOKEN,
       },
-    },
-    {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: ["G-WDPSEF84EW"],
-      },
-    },
+    }
   ],
 }
